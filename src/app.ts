@@ -1,5 +1,5 @@
 import './styles/main.scss';
-
+import './components/brandLogo';
 console.log('Hello Webpack');
 console.log('coo');
 
