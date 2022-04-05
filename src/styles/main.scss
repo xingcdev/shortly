@@ -1,6 +1,1 @@
-$font-size: 6rem;
-$font-color: lch(53 105 40);
-
-h1 {
-	font-size: $font-size;
-}
+@use 'base';
