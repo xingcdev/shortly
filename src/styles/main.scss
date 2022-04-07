@@ -1,1 +1,10 @@
 @use 'base';
+
+$gray: hsl(0, 0%, 75%);
+
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2.5rem 1rem 1rem 1rem;
+}
