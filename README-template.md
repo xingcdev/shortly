@@ -65,7 +65,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Configure the webpack
+#### Configure the webpack
 
 html-webpack-plugin - create a html template file
 
@@ -83,6 +83,20 @@ postcss-loader
 css-loader
 
 style-loader
+
+#### Using Sass with Web components
+
+### Shadow DOM
+
+Important part of Web components is the encapsulation. Separate the code of a component from the other part of code making the component clean and easier to testt
+
+The Shadow DOM is a isoled DOM.
+
+It is used to encapsulate the inner structure of an element.
+
+The difference with the DOM is that none of the code inside a shadow DOM can affect anything outside it, allowing for handy encapsulation.
+
+[Using Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 

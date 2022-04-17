@@ -1,0 +1,81 @@
+@use '../../styles/variables';
+
+.hamburger-nav__menu-bg {
+	width: 100%;
+	height: 100%;
+}
+.hamburger-nav__menu {
+	position: absolute;
+	max-width: 100%;
+	max-height: 500px;
+	overflow: hidden;
+	opacity: 1;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 10px;
+	background-color: variables.$color-primary-violet;
+	transition: max-height 0.1s ease-in-out;
+
+	.hamburger-nav__menu-content {
+		font-weight: bold;
+		list-style: none;
+		//	We set the margin of the inner div instead of setting the padding of outer div
+		//	because when the outer div's heigh is 0, the padding doesn't gone
+		margin: 2.5rem 1.5rem;
+		//	Remove ul left padding
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		hr {
+			width: 100%;
+			height: 1px;
+			margin-bottom: 1.6rem;
+			border: 0;
+			border-bottom: solid 1px variables.$color-separator;
+		}
+
+		li {
+			margin-bottom: 1.5rem;
+			width: 100%;
+			text-align: center;
+
+			a {
+				text-decoration: none;
+				color: variables.$font-color;
+			}
+
+			button {
+				cursor: pointer;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.hamburger-nav__btn {
+				background: none;
+				padding: 0;
+				border: 0;
+				font-size: 1rem;
+				color: variables.$font-color;
+				font-weight: 700;
+				font-family: inherit;
+			}
+
+			.hamburger-nav__signup {
+				background: variables.$color-primary-cyan;
+				width: 100%;
+				border-radius: 20px;
+				padding: 0.7rem ;
+			}
+		}
+	}
+}
+
+.hamburger-nav__menu.hidden {
+	max-height: 0;
+	transition: max-height 0.2s ease-out;
+}

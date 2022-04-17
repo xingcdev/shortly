@@ -24,7 +24,25 @@ module.exports = {
 			// CSS, PostCSS, and Sass
 			{
 				test: /\.(scss|css)$/,
+				// Excluding the `.styles.scss` extension
+				exclude: [/\.styles.scss$/, /node_modules/],
 				use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+			},
+
+			{
+				test: /\.styles.scss$/,
+				exclude: /node_modules/,
+				use: [
+					'sass-to-string',
+					{
+						loader: 'sass-loader',
+						options: {
+							sassOptions: {
+								outputStyle: 'compressed',
+							},
+						},
+					},
+				],
 			},
 		],
 	},

@@ -1,6 +1,10 @@
 @use 'base';
+@use 'variables';
 
-$gray: hsl(0, 0%, 75%);
+body {
+	font-size: variables.$font-size;
+	font-family: 'Poppins', sans-serif;
+}
 
 .site-header {
 	display: flex;
