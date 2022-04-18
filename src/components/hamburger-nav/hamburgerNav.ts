@@ -9,21 +9,28 @@ class HamburgerNav extends HTMLElement {
 
 		this.template = document.createElement('template') as HTMLTemplateElement;
 		this.template.innerHTML = `
-				<section class="hamburger-nav__menu hidden">
-					<ul class="hamburger-nav__menu-content">
-						<li><a href="#">Features</a></li>
-						<li><a href="#">Pricing</a></li>
-						<li><a href="#">Resources</a></li>
-						<hr />
-						<li>
-							<button class="hamburger-nav__btn hamburger-nav__login">Login</button>
-						</li>
-						<li>
-							<button class="hamburger-nav__btn hamburger-nav__signup">Sign up</button>
-						</li>
-					</ul>
+				<section class="hamburger-nav__wrapper">
+					<button class="hamburger-nav__icon-btn">
+						<div class="line"></div>
+					</button>
+					
+					<nav role="navigation" class="hamburger-nav__menu hidden">
+						<ul class="hamburger-nav__menu-content">
+							<li><a href="#">Features</a></li>
+							<li><a href="#">Pricing</a></li>
+							<li><a href="#">Resources</a></li>
+							<hr />
+							<li>
+								<button class="hamburger-nav__btn hamburger-nav__login">Login</button>
+							</li>
+							<li>
+								<button class="hamburger-nav__btn hamburger-nav__signup">Sign up</button>
+							</li>
+						</ul>
+					</nav>
 				</section>
 		`;
+
 		const style = document.createElement('style');
 		style.textContent = hamburgerNavStyles;
 
@@ -32,9 +39,7 @@ class HamburgerNav extends HTMLElement {
 		shadowRoot.appendChild(style);
 		shadowRoot.appendChild(this.template.content.cloneNode(true));
 
-		console.log(this.template.content.querySelector('.hamburger-btn'));
-
-		shadowRoot.querySelector('.hamburger-btn').addEventListener('click', () => {
+		shadowRoot.querySelector('.hamburger-nav__icon-btn').addEventListener('click', () => {
 			shadowRoot
 				.querySelector('.hamburger-nav__menu')
 				.classList.toggle('hidden');

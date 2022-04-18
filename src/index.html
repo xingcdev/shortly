@@ -22,9 +22,25 @@
 		<section class="container">
 			<header class="site-header">
 				<brand-logo></brand-logo>
-				<nav>
-					<hamburger-nav></hamburger-nav>
+				<nav role="navigation" class="main-nav">
+					<ul>
+						<section class="main-nav__links">
+							<li><a href="#">Features</a></li>
+							<li><a href="#">Pricing</a></li>
+							<li><a href="#">Resources</a></li>
+						</section>
+						<section class="main-nav__buttons">
+							<li>
+								<button class="btn__login">Login</button>
+							</li>
+							<li class="main-nav__signup-button">
+								<button class="btn__signup">Sign up</button>
+							</li>
+						</section>
+
+					</ul>
 				</nav>
+				<hamburger-nav></hamburger-nav>
 			</header>
 			<main>
 				<section class="hero-section"></section>
