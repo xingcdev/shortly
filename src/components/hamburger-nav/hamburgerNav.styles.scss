@@ -1,4 +1,5 @@
-@use '../../styles/variables';
+@use '../../styles/variables' as v;
+$font-color: white;
 
 @media screen and (min-width: 900px) {
 	:host {
@@ -18,14 +19,14 @@
 	.line {
 		width: 90%;
 		height: 3px;
-		background: variables.$color-grayish-violet;
+		background: v.$color-neutral-violet;
 
 		&::before, &::after  {
 			content: '';
 			position: absolute;
 			width: 90%;
 			height: 3px;
-			background: variables.$color-grayish-violet;
+			background: v.$color-neutral-violet;
 		}
 
 		&::before {
@@ -53,7 +54,7 @@
 	left: 50%;
 	transform: translateX(-50%);
 	border-radius: 10px;
-	background-color: variables.$color-primary-violet;
+	background-color: v.$color-primary-dark;
 	transition: max-height 0.1s ease-in-out;
 
 	.hamburger-nav__menu-content {
@@ -73,7 +74,7 @@
 			height: 1px;
 			margin-bottom: 1.6rem;
 			border: 0;
-			border-bottom: solid 1px variables.$color-separator;
+			border-bottom: solid 1px v.$color-separator;
 		}
 
 		li {
@@ -83,7 +84,7 @@
 
 			a {
 				text-decoration: none;
-				color: variables.$font-color;
+				color: $font-color;
 			}
 
 			button {
@@ -99,13 +100,13 @@
 				padding: 0;
 				border: 0;
 				font-size: 1rem;
-				color: variables.$font-color;
+				color: $font-color;
 				font-weight: 700;
 				font-family: inherit;
 			}
 
 			.hamburger-nav__signup {
-				background: variables.$color-primary-cyan;
+				background: v.$color-primary;
 				width: 100%;
 				border-radius: 20px;
 				padding: 0.7rem ;

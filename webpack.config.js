@@ -7,7 +7,7 @@ module.exports = {
 	mode: 'development',
 	devServer: {
 		static: {
-			directory: path.join(__dirname, './dist'),
+			directory: path.join(__dirname, './images'),
 		},
 		compress: true,
 		open: true,
@@ -44,6 +44,14 @@ module.exports = {
 					},
 				],
 			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource',
+			},
+			{
+				test: /\.(html)$/,
+				use: ['html-loader']
+			}
 		],
 	},
 	resolve: {
