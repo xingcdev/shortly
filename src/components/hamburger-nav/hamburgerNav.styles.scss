@@ -19,14 +19,14 @@ $font-color: white;
 	.line {
 		width: 90%;
 		height: 3px;
-		background: v.$color-neutral-violet;
+		background: v.$color-neutral-gray-dark;
 
 		&::before, &::after  {
 			content: '';
 			position: absolute;
 			width: 90%;
 			height: 3px;
-			background: v.$color-neutral-violet;
+			background: v.$color-neutral-gray-dark;
 		}
 
 		&::before {

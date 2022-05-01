@@ -6,9 +6,6 @@ module.exports = {
 	entry: './src/app.ts',
 	mode: 'development',
 	devServer: {
-		static: {
-			directory: path.join(__dirname, './images'),
-		},
 		compress: true,
 		open: true,
 		hot: true,
@@ -50,8 +47,8 @@ module.exports = {
 			},
 			{
 				test: /\.(html)$/,
-				use: ['html-loader']
-			}
+				use: ['html-loader'],
+			},
 		],
 	},
 	resolve: {
@@ -63,7 +60,6 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Shortly',
 			template: path.resolve(__dirname, './src/index.html'),
 			filename: 'index.html', // Output file
 		}),

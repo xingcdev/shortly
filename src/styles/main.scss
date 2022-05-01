@@ -3,84 +3,6 @@
 @use 'theme';
 @use 'mixins' as *;
 
-.site-header, .hero-section__content, .shorten-link-section__content, .statistics-section__content, .footer__content {
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
-.hero-section {
-	padding: 0 v.$spacing-5 0 0;
-}
-
-
-.description {
-	color: v.$color-neutral-violet;
-	font-size: 1rem;
-	margin-bottom: 1rem;
-}
-
-.site-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 2.5rem 1rem 1rem 1rem;
-
-	@include on-tablet {
-		& {
-			padding: v.$spacing-5 v.$spacing-0 ;
-		}
-	}
-}
-
-.main-nav {
-	flex: 1;
-	margin: 0 0 0 1.5rem;
-	display: none;
-
-	ul {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		font-weight: bold;
-		list-style: none;
-		padding: 0;
-
-		.main-nav__links, .main-nav__buttons {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.main-nav__links a:hover {
-			color: #000;
-		}
-
-		.main-nav__signup-button {
-			width: 120px;
-		}
-
-		li {
-			margin-left: 1.5rem;
-			text-align: center;
-
-			a {
-				text-decoration: none;
-				color: v.$color-neutral-gray;
-			}
-
-			button {
-				cursor: pointer;
-			}
-		}
-	}
-}
-@media screen and (min-width: 900px) {
-	.main-nav {
-		display: block;
-	}
-}
-
 button {
 	background: none;
 	padding: 0;
@@ -96,7 +18,7 @@ button {
 	padding: 0;
 	border: 0;
 	font-size: 1rem;
-	color: v.$color-neutral-gray;
+	color: v.$color-neutral-gray-light;
 	font-weight: 700;
 	font-family: inherit;
 
@@ -116,9 +38,113 @@ button {
 	}
 }
 
+input {
+	color: v.$color-neutral-gray-dark;
+	padding: v.$spacing-3;
+	border-radius: v.$border-radius;
+}
+
+.btn--primary {
+	background: v.$color-primary;
+	width: 100%;
+	border-radius: 20px;
+	padding: 0.7rem ;
+	color: white;
+
+	&:hover {
+		background: v.$color-primary-hover;
+	}
+}
+
+.site-header, .hero-section__content, .shorten-link-section__content, .statistics-section__content, .footer__content {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.description {
+	color: v.$color-neutral-gray-dark;
+	font-size: 1rem;
+	margin-bottom: 1rem;
+}
+
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: v.$spacing-5 v.$spacing-padding v.$spacing-padding v.$spacing-padding;
+
+	.main-nav {
+		flex: 1;
+		margin: 0 0 0 1.5rem;
+		display: none;
+
+		ul {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			font-weight: bold;
+			list-style: none;
+			padding: 0;
+
+			.main-nav__links, .main-nav__buttons {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.main-nav__links a:hover {
+				color: #000;
+			}
+
+			.main-nav__signup-button {
+				width: 120px;
+			}
+
+			li {
+				margin-left: 1.5rem;
+				text-align: center;
+
+				a {
+					text-decoration: none;
+					color: v.$color-neutral-gray-light;
+				}
+
+				button {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	@media screen and (min-width: 900px) {
+		.main-nav {
+			display: block;
+		}
+	}
+
+	@include on-tablet {
+		& {
+			padding: v.$spacing-5 v.$spacing-0 ;
+		}
+	}
+}
+
+
+
 .hero-section {
+
+	.hero-section__image {
+		padding: v.$spacing-padding 0 0 0;
+		overflow: hidden;
+		margin: 0 0 v.$spacing-6 0 ;
+
+		img {
+			max-width: 135%;
+		}
+	}
+
 	.hero-section__text {
-		padding: v.$spacing-padding;
+		padding: 0 v.$spacing-padding;
 		text-align: center;
 
 		.hero-section__title {
@@ -130,18 +156,10 @@ button {
 			margin: 0 0 v.$spacing-5 0;
 		}
 
-		.hero-section__btn {
+		.hero-section__btn-get-started {
 			width: 50%;
 			color: #fff;
-		}
-
-	}
-	.hero-section__image {
-		padding: v.$spacing-padding 0 0 0;
-		overflow: hidden;
-
-		img {
-			max-width: 135%;
+			margin: 0 0 v.$spacing-5 0;
 		}
 	}
 
@@ -165,5 +183,14 @@ button {
 		}
 	}
 }
+
+.shorten-link-section {
+	background: v.$color-neutral-gray-light;
+
+	.shorten-link-section__content {
+		padding: 0 v.$spacing-padding;
+	}
+}
+
 
 
