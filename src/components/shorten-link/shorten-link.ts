@@ -20,9 +20,11 @@ class ShortenLink extends HTMLElement {
     
                     <ul class="shorten-link__link-list">
                         <li class="shorten-link__list-item">
-                            <p class="shorten-link__input-link"></p>
-                            <p class="shorten-link__shortened-link"></p>
-                            <button class="shorten-link__copy-button">Copy</button>
+                            <p class="shorten-link__input-link">https://wsdfsdffsdafadfssdfsdfafd</p>
+                            <section class="shorten-link__action-area">
+                                <p class="shorten-link__output-link">https://wsdfsdffsdafadfs</p>
+                                <button class="shorten-link__copy-button btn--primary">Copy</button>
+                            </section>
                         </li>
                     </ul>
                 </section>

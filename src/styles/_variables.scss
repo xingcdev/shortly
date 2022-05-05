@@ -4,7 +4,7 @@
 // Breakpoints
 //==============================================================================
 
-$breakpoint-mobile: 375px;
+$breakpoint-mobile: 900px;
 $breakpoint-desktop: 1440px;
 
 //==============================================================================
@@ -71,4 +71,6 @@ $spacing-padding-container: $spacing-padding;
 //==============================================================================
 // Border
 //==============================================================================
-$border-radius: 7px
+$border-radius: 7px;
+$border-color: $color-neutral-gray-light;
+$border: $border-color 1px solid

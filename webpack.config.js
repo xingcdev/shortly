@@ -3,7 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+	// Which file Webpack should use to begin building its internal dependency graph.
 	entry: './src/app.ts',
+	// Which directory Webpack should place all the bundles.
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		// How to rename bundles
+		filename: 'bundle.js',
+	},
 	mode: 'development',
 	devServer: {
 		compress: true,
@@ -53,10 +60,6 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.ts', '.js'],
-	},
-	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist'),
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

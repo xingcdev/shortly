@@ -1,13 +1,16 @@
 @use '../../styles/variables' as v;
 @use '../../styles/main.scss';
 
-.shorten-link {
+$padding:  v.$spacing-5;
 
+.shorten-link {
+  margin: -100px 0 0 0;
   .shorten-link__form {
-    padding: v.$spacing-5;
+    padding: $padding;
     background: v.$color-primary-dark;
     border-radius: v.$border-radius;
     position: relative;
+    margin: 0 0 v.$spacing-margin 0;
 
     &::before {
       content: "";
@@ -34,6 +37,44 @@
       position: relative;
       z-index: 2;
       border-radius: v.$border-radius;
+    }
+
+  }
+
+  .shorten-link__link-list {
+    padding: 0;
+
+    & > * {
+      margin: 0 0 v.$spacing-margin 0;
+    }
+
+    .shorten-link__input-link, .shorten-link__output-link{
+      margin: 0;
+    }
+
+    .shorten-link__list-item {
+      background: v.$color-background;
+      border-radius: v.$border-radius;
+
+      .shorten-link__input-link {
+        border-bottom: v.$border;
+        padding: v.$spacing-3 v.$spacing-4;
+      }
+
+      .shorten-link__action-area {
+        padding: 0 v.$spacing-4 v.$spacing-4 v.$spacing-4;
+
+        .shorten-link__output-link {
+          padding: v.$spacing-3 0 ;
+          color: v.$color-primary;
+        }
+
+        .shorten-link__copy-button {
+          padding: 0.5rem 0;
+          border-radius: v.$border-radius;
+        }
+      }
+
     }
   }
 }

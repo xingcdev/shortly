@@ -65,6 +65,10 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
+#### Webpack
+
+Webpack is a module bundles
+
 #### Configure the webpack
 
 html-webpack-plugin - create a html template file

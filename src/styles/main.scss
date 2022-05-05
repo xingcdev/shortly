@@ -132,7 +132,9 @@ input {
 
 
 .hero-section {
-
+	.hero-section__content {
+		padding: 0 0 10rem;
+	}
 	.hero-section__image {
 		padding: v.$spacing-padding 0 0 0;
 		overflow: hidden;
