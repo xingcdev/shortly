@@ -190,7 +190,12 @@ input {
 	background: v.$color-neutral-gray-light;
 
 	.shorten-link-section__content {
+		// --- Disable margins collapse
+		display: flex;
+		flex-flow: column wrap;
+		// ---
 		padding: 0 v.$spacing-padding;
+
 	}
 }
 

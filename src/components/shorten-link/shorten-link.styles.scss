@@ -4,13 +4,15 @@
 $padding:  v.$spacing-5;
 
 .shorten-link {
-  margin: -100px 0 0 0;
+  margin: -80px 0 0 0;
   .shorten-link__form {
     padding: $padding;
     background: v.$color-primary-dark;
     border-radius: v.$border-radius;
     position: relative;
     margin: 0 0 v.$spacing-margin 0;
+    // Make border radius works
+    overflow: hidden;
 
     &::before {
       content: "";
@@ -20,23 +22,39 @@ $padding:  v.$spacing-5;
       width: 100%;
       height: 100%;
       background: v.$color-additional-violet;
-      z-index: 1;
-      clip-path: ellipse(65% 60% at 92% 19%);
+      z-index: 0;
+      clip-path: ellipse(70% 60% at 92% 19%);
     }
 
     .shorten-link__input {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       width: 100%;
       height: 50px;
-      margin: 0 0 v.$spacing-4 0;
+
+      &.error {
+        border: 3px solid v.$color-error;
+        outline: none;
+
+        &::placeholder {
+          color: v.$color-error;
+        }
+      }
 
     }
 
-    .shorten-link__submit-button {
+    .shorten-link__js-error-msg {
+      position: relative;
+      z-index: 1;
+      color: v.$color-error;
+      font-weight: v.$font-weight-bold;
+    }
+
+    .shorten-link__submit-btn {
       position: relative;
       z-index: 2;
       border-radius: v.$border-radius;
+      margin: v.$spacing-4 0 0 0;
     }
 
   }
