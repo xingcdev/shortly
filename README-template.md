@@ -10,9 +10,9 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [What I learned](#what-i-learned)
+- [Continued development](#continued-development)
+- [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -57,19 +57,16 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-### What I learned
+## What I learned
 
-#### Webpack
+### Webpack
 
-Webpack is a module bundles
+Webpack is a module bundler that put all your assets (HTML, CSS, JS, images, fonts) in a few files.
 
-#### Configure the webpack
+### Configure the webpack
 
 html-webpack-plugin - create a html template file
 
@@ -88,7 +85,7 @@ css-loader
 
 style-loader
 
-#### Using Sass with Web components
+### Using Sass with Web components
 
 ### Shadow DOM
 
@@ -104,13 +101,45 @@ The difference with the DOM is that none of the code inside a shadow DOM can aff
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 
-### Continued development
+### Margin collapsing
+
+To make the component `shorten-link` overlapping, we apply a top negative margin to move the component up:
+
+```html
+<section class="shorten-link-section">
+    <section class="shorten-link-section__content">
+      <section class="shorten-link">  <!-- Apply the top margin here -->
+          <!-- Some code...-->
+      </section>
+    </section>
+</section>
+
+<style>
+  .shorten-link {
+    margin: -80px 0 0 0;
+  }
+</style>
+```
+
+The problem is the whole container `shorten-link-section` is moving up instead of moving the component up.
+The negative margin is transferred to the container `shorten-link-section` because of margin collapse between the parent and child element. 
+
+To prevent margin from collapsing, we apply `display: flex` to the parent `shorten-link-section__content` or `shorten-link-section` : 
+```css
+.shorten-link-section__content {
+    display: flex;
+    flex-flow: column wrap;
+```
+
+Source: [How to disable margin-collapsing? - StackOverflow](https://stackoverflow.com/questions/19718634/how-to-disable-margin-collapsing)
+
+## Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
-### Useful resources
+## Useful resources
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
